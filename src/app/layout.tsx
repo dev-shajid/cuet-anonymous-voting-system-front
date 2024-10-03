@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import NextTopLoader from 'nextjs-toploader';
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme/theme-provider";
+import Nav from "@/components/Nav";
+import Meteors from "@/components/ui/meteors";
+import Particles from "@/components/ui/particles";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +33,22 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Nav />
+
+        <Particles
+          className="absolute inset-0"
+          quantity={100}
+          ease={80}
+          color={'#fff'}
+          refresh
+        />
+        <ThemeProvider>
+          <NextTopLoader
+            showSpinner={false}
+            color="#4646d7"
+          />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
