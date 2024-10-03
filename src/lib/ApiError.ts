@@ -1,7 +1,7 @@
 export default function ApiError(
     status: number,
     message?: string,
-    errors?: any,
+    errors?: [string] | null,
 ):ApiErrorType {
     return {
         status: status || 404,
@@ -14,6 +14,6 @@ export default function ApiError(
 export interface ApiErrorType {
     status: number
     message: string
-    errors: any
+    errors: [string] | null
     success: boolean
 }

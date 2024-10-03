@@ -9,7 +9,7 @@ export function ThemeProvider({ children, forcedTheme }: { children: React.React
     defaultTheme='dark'
     // enableSystem={false}
     disableTransitionOnChange={false}
-    // forcedTheme={forcedTheme}
+    forcedTheme={forcedTheme}
   >
     {children}
   </NextThemesProvider>

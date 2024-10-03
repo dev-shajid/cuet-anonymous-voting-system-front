@@ -4,10 +4,8 @@ import { useState } from "react"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { FadeUp } from "@/components/Animation"
 import ShineBorder from "@/components/ui/shine-border"
-import { MagicCard } from "@/components/ui/magic-card"
 import { Button } from "@/components/ui/button"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Label } from "@/components/ui/label"
 import { cn } from "@/lib/utils"
 
 interface PollOption {
@@ -26,6 +24,7 @@ const initialPollOptions: PollOption[] = [
 export default function VotePage({ params: { id } }: { params: { id: string } }) {
     const [pollOptions, setPollOptions] = useState(initialPollOptions)
     const [selectedOption, setSelectedOption] = useState("Python")
+    console.log({Poll_ID: id})
 
     const handleOptionClick = (language: string) => {
         setPollOptions(prevOptions =>
@@ -42,7 +41,7 @@ export default function VotePage({ params: { id } }: { params: { id: string } })
         setSelectedOption(language)
     }
 
-    const totalVotes = pollOptions.reduce((sum, option) => sum + option.percentage, 0)
+    // const totalVotes = pollOptions.reduce((sum, option) => sum + option.percentage, 0)
 
     return (
         <>
@@ -52,7 +51,6 @@ export default function VotePage({ params: { id } }: { params: { id: string } })
                         className="border bg-background md:shadow-xl p-0.5 max-w-[600px] w-full mt-12"
                         color={["#A07CFE", "#3364e0", "#9513d6"]}
                     >
-                        {/* <MagicCard className="border-none w-full"> */}
                         <Card className="bg-transparent border-none w-full z-10">
                             <CardHeader>
                                 <CardTitle className="text-2xl">{'Poll UI Design'}</CardTitle>
@@ -82,7 +80,6 @@ export default function VotePage({ params: { id } }: { params: { id: string } })
                                 <Button variant='outline' className="w-full cursor-pointer">Submit</Button>
                             </CardFooter>
                         </Card>
-                        {/* </MagicCard> */}
                     </ShineBorder>
                 </FadeUp>
             </div>

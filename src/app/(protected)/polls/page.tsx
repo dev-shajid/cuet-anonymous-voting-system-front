@@ -2,7 +2,6 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Button } from "@/components/ui/button"
 import { MagicCard } from "@/components/ui/magic-card"
 import ShineBorder from "@/components/ui/shine-border"
-import { LinkButton } from "@/components/ui/linkButton"
 import Link from "next/link"
 import { FadeUp } from "@/components/Animation"
 

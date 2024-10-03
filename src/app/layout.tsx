@@ -4,7 +4,6 @@ import NextTopLoader from 'nextjs-toploader';
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import Nav from "@/components/Nav";
-import Meteors from "@/components/ui/meteors";
 import Particles from "@/components/ui/particles";
 
 const geistSans = localFont({
@@ -35,13 +34,15 @@ export default function RootLayout({
       >
         <Nav />
 
-        <Particles
-          className="absolute inset-0"
-          quantity={100}
-          ease={80}
-          color={'#fff'}
-          refresh
-        />
+        <div className="-z-10">
+          <Particles
+            className="absolute inset-0"
+            quantity={100}
+            ease={80}
+            color={'#fff'}
+            refresh
+          />
+        </div>
         <ThemeProvider>
           <NextTopLoader
             showSpinner={false}

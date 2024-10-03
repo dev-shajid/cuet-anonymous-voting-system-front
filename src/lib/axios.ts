@@ -11,8 +11,8 @@ export const axiosAuth = axios.create({
 export type AxiosResponseType = {
     success: boolean;
     message: string;
-    data: any;
-    errors: any;
+    data: object | null | undefined;
+    errors: [string] | null;
 };
 
 // Define a type for options that can include headers and other AxiosRequestConfig properties

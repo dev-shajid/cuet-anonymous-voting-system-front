@@ -1,14 +1,15 @@
 import ApiError, { ApiErrorType } from "./ApiError"
 
-export default function AsyncHandler(fn: Function) {
-    // return function with defautl argument that accepts a function
-    return async function (...args: any) {
+type AsyncFunction = (...args: unknown[]) => Promise<unknown>;
+
+export default function AsyncHandler(fn: AsyncFunction = async () => Promise.resolve()): AsyncFunction {
+    return async function (...args: unknown[]): Promise<unknown> {
         try {
             return await fn(...args)
         } catch (error) {
             console.error({ AsyncHandlerError: error })
             let errorResponse = error as ApiErrorType
-            if (error instanceof Error) errorResponse = ApiError(500, error.message, error)
+            if (error instanceof Error) errorResponse = ApiError(500, error.message)
             return errorResponse
         }
     }

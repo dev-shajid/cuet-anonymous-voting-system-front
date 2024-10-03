@@ -1,7 +1,7 @@
 export default function ApiResponse(
     status: number,
     message?: string,
-    data?: any,
+    data?: object | null | undefined,
 ):ApiResponseType {
     return {
         status: status || 200,
@@ -14,6 +14,6 @@ export default function ApiResponse(
 export interface ApiResponseType {
     status: number
     message: string
-    data: any
+    data: object | null | undefined
     success: boolean
 }

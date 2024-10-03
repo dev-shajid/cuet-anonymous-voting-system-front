@@ -19,13 +19,15 @@ import { Card, CardTitle } from "@/components/ui/card"
 import { useState, useTransition } from "react"
 import { IconLoadingSpinner } from "./IconLoadingSpinner"
 import FormToast from "./FormToast"
-import ApiError, { ApiErrorType } from "@/lib/ApiError"
+import { ApiErrorType } from "@/lib/ApiError"
 import { ApiResponseType } from "@/lib/ApiResponse"
 import { LoginSchema } from "@/schema/login.schema"
 
-export function FormLogin({callback}:{callback?:string | null}) {
+export function FormLogin({ callback }: { callback?: string | null }) {
   const [isPending, setTransition] = useTransition()
   const [data, setData] = useState<ApiErrorType | ApiResponseType | undefined>(undefined)
+
+  console.log({ callback })
 
   const form = useForm({
     resolver: zodResolver(LoginSchema),
@@ -36,11 +38,14 @@ export function FormLogin({callback}:{callback?:string | null}) {
   })
 
   const onSubmit = async (values: z.infer<typeof LoginSchema>) => {
-    
+    setTransition(() => {
+      setData(undefined)
+      alert(JSON.stringify(values, null, 2))
+    })
   }
 
   return (
-    <Card className="max-w-[400px] w-full px-4 py-8 space-y-6">
+    <Card className="max-w-[400px] w-full px-4 py-8 space-y-6 bg-black z-10">
       <CardTitle className="text-center">Login</CardTitle>
       <Form {...form}>
         <form
