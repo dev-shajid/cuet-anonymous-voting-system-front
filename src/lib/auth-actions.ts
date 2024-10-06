@@ -48,7 +48,7 @@ export async function setCookeis(access_token: string, refresh_token: string) {
   });
 
   // set the token in next cookies
-  let cookie = cookies()
+  const cookie = cookies()
   cookie.set('access_token', access_token)
   cookie.set('refresh_token', refresh_token)
 
@@ -57,8 +57,8 @@ export async function setCookeis(access_token: string, refresh_token: string) {
 
 export async function getUser() {
   // const supabase = createClient();
-  let cookie = cookies()
-  let access_token = cookie.get('access_token')?.value
+  const cookie = cookies()
+  const access_token = cookie.get('access_token')?.value
   const { data, error } = await supabase.auth.getUser(access_token);
   if (error) {
     console.log(error);
@@ -75,7 +75,9 @@ import jwt from 'jsonwebtoken'
 export async function decodeJWT() {
 try {
     const cookie = cookies()
-    const access_token = cookie.get('access_token')?.value!
+    const access_token = cookie.get('access_token')?.value
+
+    if(!access_token) throw new Error('No access token found')
   
     const decoded = jwt.verify(access_token, JWT_SECRET)
     console.log({ decoded })

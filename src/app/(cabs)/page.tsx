@@ -3,7 +3,7 @@ import { LinkButton } from '@/components/ui/linkButton';
 import { ArrowRight } from 'lucide-react';
 import { FadeDown, FadeUp } from '@/components/Animation';
 import { decodeJWT, getUser } from '@/lib/auth-actions';
-import { Card, CardContent } from '@/components/ui/card';
+// import { Card, CardContent } from '@/components/ui/card';
 import UserDetails, { UserDetailsFallback } from '@/components/UserDetails';
 
 export default async function HomePage() {

@@ -1,8 +1,8 @@
 'use client'
 
 import React, { useEffect } from 'react'
-import { getUser, setCookeis, signInWithGoogle } from '@/lib/auth-actions'
-import { usePathname, useRouter } from 'next/navigation'
+import { setCookeis } from '@/lib/auth-actions'
+import { useRouter } from 'next/navigation'
 import { IconLoadingSpinner } from '@/components/IconLoadingSpinner';
 
 export default function AuthCallback() {
@@ -36,7 +36,7 @@ export default function AuthCallback() {
 
     useEffect(() => {
         getToken()
-    }, [router]);
+    }, [router, getToken]);
 
     return (
         <section className='flex flex-col items-center justify-center h-screen'>

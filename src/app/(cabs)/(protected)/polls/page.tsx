@@ -1,16 +1,16 @@
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import {
-    Select,
-    SelectContent,
-    SelectGroup,
-    SelectItem,
-    SelectLabel,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select"
+// import {
+//     Select,
+//     SelectContent,
+//     SelectGroup,
+//     SelectItem,
+//     SelectLabel,
+//     SelectTrigger,
+//     SelectValue,
+// } from "@/components/ui/select"
 import { Button } from "@/components/ui/button"
-import { MagicCard } from "@/components/ui/magic-card"
-import ShineBorder from "@/components/ui/shine-border"
+// import { MagicCard } from "@/components/ui/magic-card"
+// import ShineBorder from "@/components/ui/shine-border"
 import Link from "next/link"
 import { FadeUp } from "@/components/Animation"
 import { Input } from "@/components/ui/input"

@@ -30,7 +30,7 @@ export function DateTimePicker() {
 
   const formatTime = () => {
     if (hour && minute && date) {
-      let d=new Date(date)
+      const d=new Date(date)
       d.setHours(meridiem === 'PM' ? parseInt(hour) + 12 : parseInt(hour))
       d.setMinutes(parseInt(minute)) 
       return d.toLocaleString()

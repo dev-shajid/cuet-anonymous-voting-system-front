@@ -1,11 +1,10 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Button } from './ui/button'
 import { signInWithGoogle } from '@/lib/auth-actions'
 import { FcGoogle } from "react-icons/fc";
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { cn } from '@/lib/utils';
 import AnimatedText from './AnimatedText';
 
 export default function SupabaseLogin() {

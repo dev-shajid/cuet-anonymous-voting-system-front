@@ -4,7 +4,7 @@ import { getUser } from '@/lib/auth-actions'
 export async function updateSession(request: NextRequest) {
     console.log("Middleware invoking 🔥")
 
-    let supabaseResponse = NextResponse.next({
+    const supabaseResponse = NextResponse.next({
         request,
     })
 

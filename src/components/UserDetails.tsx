@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardHeader } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Skeleton } from "@/components/ui/skeleton"
 
@@ -9,17 +9,17 @@ interface UserProps {
 }
 
 export default function UserDetails({ email, full_name, avatar_url }: UserProps) {
-    const formatDate = (dateString?: string) => {
-        if (!dateString) return 'N/A';
-        const date = new Date(dateString);
-        return date.toLocaleString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-        });
-    };
+    // const formatDate = (dateString?: string) => {
+    //     if (!dateString) return 'N/A';
+    //     const date = new Date(dateString);
+    //     return date.toLocaleString('en-US', {
+    //         year: 'numeric',
+    //         month: 'long',
+    //         day: 'numeric',
+    //         hour: '2-digit',
+    //         minute: '2-digit',
+    //     });
+    // };
 
     const getInitials = (name?: string) => {
         return name ? name.split(' ').map(n => n[0]).join('').toUpperCase() : '??';
