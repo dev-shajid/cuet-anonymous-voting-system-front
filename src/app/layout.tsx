@@ -32,9 +32,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Nav />
 
-        <div className="-z-10">
+        {/* <div className="-z-10">
           <Particles
             className="absolute inset-0"
             quantity={100}
@@ -42,7 +41,7 @@ export default function RootLayout({
             color={'#fff'}
             refresh
           />
-        </div>
+        </div> */}
         <ThemeProvider>
           <NextTopLoader
             showSpinner={false}

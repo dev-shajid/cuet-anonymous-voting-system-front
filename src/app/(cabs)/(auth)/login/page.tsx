@@ -1,4 +1,5 @@
 import { FormLogin } from "@/components/formLogin"
+import SupabaseLogin from "@/components/SupabaseLogin";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,7 +10,8 @@ export default function Login({searchParams}: {searchParams: {callback?:string |
 
   return (
     <section className="flex items-center justify-center container p-4 pt-16">
-      <FormLogin callback={searchParams?.callback} />
+      {/* <FormLogin callback={searchParams?.callback} /> */}
+      <SupabaseLogin />
     </section>
   )
 }
